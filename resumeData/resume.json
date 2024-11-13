@@ -1,0 +1,68 @@
+{
+    "basics": {
+      "name": "Filip Hansén",
+      "label": "",
+      "picture": "",
+      "email": "filip.hanse@chas",
+      "phone": "(555) 555-5555.",
+      "summary": "A one-sentence to one-paragraph overview text. Do not include any line-breaks.",
+      "location": {
+        "address": "Orrspelsvägen 77",
+        "postalCode": "167 66",
+        "city": "Stockholm",
+        "countryCode": "SWE"
+      },
+      "profiles": [
+        {
+          "network": "linkedin",
+          "username": "Filip Hansen",
+          "url": "https://www.linkedin.com/in/filip-hansen-650115170/"
+        }
+      ]
+    },
+    "work": [
+      {
+        "company": "Swedbank",
+        "position": "B2B customer service",
+        "startDate": "2018",
+        "endDate": "2019",
+        "summary": "I worked with assisting customer with their inquiring agreements"
+      },
+      {
+        "company": "Nobel Foundation",
+        "position": "Clerk",
+        "startDate": "2018",
+        "endDate": "2019",
+        "summary": "Recieved the nobel laureates at Grand Hotel in Stockholm and assisted them with anything related to the nobel week"
+      }
+    ],
+    "education": [
+      {
+        "institution": "Jensen Norra",
+        "area": "Economics",
+        "studyType": "Gymnasium",
+        "startDate": "Your start date, in YYYY-MM-DD format",
+        "endDate": "Your completion date, in YYYY-MM-DD format",
+        "gpa": "",
+        "courses": "Programming 1"
+      }
+    ],
+    
+    "skills": [
+      {
+        "name": "Javascript",
+        "level": "for (let key in year) {knowledge++}"
+      }
+    ],
+    "languages": [
+      {
+        "language": "Swedish",
+        "fluency": "Native"
+      },
+      {
+        "language": "English",
+        "fluency": "Native"
+      }
+    ]
+
+  }

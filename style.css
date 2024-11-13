@@ -1,0 +1,592 @@
+:root {
+    /* dark mode colours */
+    --dark-bg: #1a1a1a;
+    --dark-text: Whitesmoke;
+    --dark-card: #363636; 
+
+    --primary-color: black;
+    --secondary-color: rgb(128, 128, 128);
+    --gradient-color: linear-gradient(to right blue, purple, pink);
+    --desktop-text-color: #42446e;
+}
+input {
+    display: none;
+}
+/* dark mode activated via input checkbox */
+input[type="checkbox"]:checked ~ .mega-wrapper {
+    background-color: var(--dark-bg) !important;
+    color: var(--dark-text) !important;
+
+    & .fa-github {
+        filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(3%) hue-rotate(250deg) brightness(101%) contrast(101%);
+        
+    }
+    & .card {
+        background-color: var(--dark-card);
+    }
+    & h1 {
+        color: var(--dark-text);
+    }
+    & .flex-nav ul a {
+        color: var(--dark-text);
+        
+    }
+
+    & .card .card-footer a {
+        color: var(--dark-text);
+    }
+    & .card p span {
+        color: var(--dark-text);
+    }
+    & .about-me p:not(.my-name p) {
+        color: var(--dark-text);
+    }
+    & .about-me h5 {
+        color: var(--dark-text);
+    }
+}
+
+input[type="checkbox"]:checked ~ .container-page4 .card h3 {
+    color: var(--dark-text);
+}
+input[type="checkbox"]:checked + label {
+    background-color: white;
+}
+input[type="checkbox"]:checked ~ .mega-wrapper .container-page4 .card a img {
+    filter: brightness(0) saturate(100%) invert(99%) sepia(3%) saturate(229%) hue-rotate(196deg) brightness(118%) contrast(92%);
+}
+
+.go-to-about, .go-to-projects {
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    margin: 10px;
+} 
+.mega-wrapper {
+    min-height: 100vh;
+    max-height: none;
+}
+.projects-page {
+    display: none;
+}
+/* Button for darkmode */
+label {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #000;
+    border-radius: 5px;
+    position: fixed;
+    top: 20%;
+    right: 20px;
+}
+
+html {
+    font-size: 16px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+header {
+    width: 100%;
+    height: auto;
+
+} 
+.stamp {
+    display: inline-block;
+    padding: 0.8rem;
+}
+.stamp p {
+    margin: 0;
+    background: linear-gradient(to right, blue, purple, pink);
+    background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;   
+}
+.hamburger-menu {
+    position:absolute;
+    right: 0%;
+    min-width: 5%;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem;
+    align-content: flex-end;
+}
+.menu-line {
+    border: 2px solid var(--secondary-color);
+    border-radius: 15%;
+}
+/* .container {
+    contain: content;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    width: 80%;
+    height: auto;
+    max-width: 550px;
+    min-height: 300px;
+    
+} */
+.flex-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+}
+body .flex-nav ul li .fa-github {
+    font-size: 2.6rem;
+}
+ul {
+    
+    margin-top: 0.5rem;
+    padding: 0;
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.social {
+    display: inline-block;
+}
+.fa-twitter {
+    /* styling */
+    font-size: 1.5rem;
+    border: 8px solid var(--primary-color);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    /* positioning */
+    position: absolute;
+    color: white;
+    
+    left: 20%;
+}
+.fa-linkedin {
+    /* styling */
+    font-size: 1.5rem;
+    border: 8px solid var(--primary-color);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+    /* positioning */
+    position: absolute;
+    left: 47.5%;
+}
+.fa-github {
+    font-size: 2.6rem;
+    /* positioning */
+    position: absolute;
+    right: 20%;
+}
+.about-me {
+    margin-top: 15%;
+    margin-left: 8%;
+}
+.about-me p {
+    margin: 0;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+}
+.about-me h5 {
+    margin: 0;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+}
+.my-name {
+    display: inline-block;
+    background: linear-gradient(to right, blue, purple, pink);
+    background-clip: text;
+    color: transparent;
+}
+.about-me img {
+    position: relative;
+    left: 18%;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    border-radius: 50%;
+    aspect-ratio: 16/16;
+    background-image: linear-gradient(to top, blue, purple, pink);
+    padding: 4px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    color: var(--secondary-color)
+}
+
+/* Second page */
+.container-page2 {
+    contain: content;
+    margin: 0 auto;
+    width: 95%;
+    height: auto;
+    max-width: 550px;
+}
+.experience-box {
+    border-bottom: 1px solid var(--secondary-color);
+    /* grid setup for boxes */
+    display: grid;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    grid-template-columns: 50% 50%;
+    min-height: 100px;
+}
+.experience-box p {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    
+}
+.experience-box span:not(.green-time) {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+}
+.experience-box5 p {
+    min-width: 400px;
+}
+.experience-box5 .institute {
+    min-width: 400px;
+}
+.green-time {
+    position: relative;
+    left: 55%;
+    top: 20%;
+    width: 30%;
+    color: #5ba04c;
+    font-size: 0.8rem;
+    background-color: #dffee2;
+    text-align: center;
+    height: fit-content;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    
+}
+.calendar {
+    grid-area: -3 / 2 / -3 / 2;
+    justify-self: flex-end;
+    padding-right: 5%;
+    padding-top: 4%;
+}
+.institute img {
+    position: relative;
+    top: 10%;
+}
+.location {
+    position: relative;
+    bottom: 35%;
+}
+.location img {
+    position: relative;
+    top: 10.5%;
+}
+.calendar img {
+    display: none;
+}
+.container-page2 header p {
+    color: var(--secondary-color);
+}
+.grid-wrapper h2{
+    font-size: 1.8rem;
+}
+
+.text-decoration {
+    background: linear-gradient(to right, purple, pink);
+    background-clip: text;
+    color: transparent;
+}
+.desktop-text {
+    display: none;
+}
+.container-page2 h3 {
+    font-size: 2rem;
+}
+
+.container-page4{
+    
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+
+}
+
+
+/* Fourth Page */
+.card {
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 12px 12px 12px   rgba(0, 0, 0, 0.3),
+    -10px 10px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 5%;
+    /* All card dekstop adjustments nested here */
+    & span {
+        color: black;
+    }
+    & h3 {
+        margin-left: 5%;
+        margin-bottom: 0;
+    }
+    & p {
+        font-size: 0.9rem;
+        color: var(--secondary-color);
+        margin-left: 4.5%;
+    }
+    
+    & .card-footer {
+        height: 3vh;
+        margin-bottom: 0.5rem;
+    }
+    & .live-preview {
+        
+        color: var(--primary-color);
+        position: relative;
+        left: 9%;
+    }
+    & .live-preview img {
+        position: absolute;
+        bottom: 0.7%;
+        right: 102%;
+        height: 2vh;
+    }
+    & .view-code img {
+        position: relative;
+        top: 10%;
+        right: 0.5%;
+        height: 2vh;
+    }
+    & .view-code {
+        
+        color: var(--primary-color);
+        position:relative;
+        left: 58%;
+        
+    }
+}
+.my-projects-cards {
+    margin-left: 5%;
+    margin-bottom: 5%;
+
+    & p {
+        display: none;
+    }
+}
+
+footer {
+    display: contents;
+    position: absolute;
+    top: 100%;
+    left: 20%;
+}
+
+@media (min-width: 1000px) {
+
+    input[type="checkbox"]:checked ~ .mega-wrapper .fa-github{
+        filter: brightness(0) saturate(100%) invert(56%) sepia(40%) saturate(0%) hue-rotate(144deg) brightness(82%) contrast(89%);
+    }
+    footer {
+        position: absolute;
+        left: 39%;
+    }
+  
+    .container-page4 {
+        width: fit-content;
+        margin-left: 15%;
+        justify-items: center;
+        margin-top: 10%;
+        column-gap: 5%;
+        row-gap: 3%;
+        display: grid;
+        grid-template-rows: repeat(auto);
+        grid-template-columns: repeat(3, 25%);
+        
+    }
+    /* nested project-card adjustments for dekstop */
+    .card {
+        
+        width: 90%;
+
+        & .card-footer{
+            font-size: 0.85rem;
+        }
+        & .live-preview {
+            left: 16.5%;
+        }
+
+        & .view-code {
+            left: 30%;
+        }
+        & p {
+            width: 95%;
+        }
+        & h3 {
+            font-size: 1.5rem;
+        }
+        & h3, p {
+            margin-left: 9%;
+        }
+    }
+    .my-projects-cards {
+        position: absolute;
+        left: 12%;
+        top: 10%;
+        & p {
+            display: contents;
+        }
+        & h1 {
+            color: var(--desktop-text-color);
+        }
+    }
+    
+
+  
+    
+
+    .experience-box {
+        min-height: 50px;
+    }
+    .experience-box4 {
+        display: none;
+    }
+    
+    header .desktop-text {
+        display: contents;
+    }
+    header .phone-text {
+        display: none;
+    }
+    header {
+        width: 50%;
+        margin-left: 10%;
+        margin-top: 7%;
+    }
+    .location {
+        grid-area: 2 / 1 / 2 / 2;
+        position: relative;
+        left: 70%;
+        top: 1%;
+    }
+    .location5 {
+        display: none;
+    }
+    .green-time {
+        position: relative;
+        left: 63%;
+    }
+    .institute {
+        grid-area: 2 / 1 / 2 / 2;
+    }
+    .grid-wrapper {
+        width: 50%;
+        margin-left: 10%;
+    }
+    
+    .container-page2 {
+            max-width: 1600px;
+            width: 90%;
+            min-height: 0px;
+            margin: 0;
+    }
+    .experience-box p {
+        position: relative;
+        bottom: 60%;
+    }
+    .experience-box {
+        margin-bottom: 5%;
+    }
+    .calendar {
+        position: relative;
+        bottom: 18%;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+    .stamp {
+        left: 7%;
+        top: 1%;
+        position: absolute;
+    }
+    .stamp p {
+        font-size: 2rem;
+    }
+    .flex-nav {
+        display: flex;
+        max-width: 80%;
+        align-items: flex-end;
+        
+    }
+    .fa-twitter {
+        border: 8px solid var(--secondary-color);
+        background-color: var(--secondary-color);
+        position: absolute;
+        left: 85%;
+    }    
+    .fa-linkedin {
+
+        border: 8px solid var(--secondary-color);
+        background-color: var(--secondary-color);
+        position: absolute;
+        left: 90%;
+        
+    }
+    .fa-github {
+        color:var(--secondary-color);
+        position: absolute;
+        left: 80%;
+    }
+    
+    ul {
+        display: flex;
+        gap: 3rem;
+        
+    }
+    .flex-nav li a {
+        color: var(--secondary-color);
+    }
+    .about-me {
+        margin-top: 13%;
+        font-size: 2rem;
+    }
+    .about-me p {
+        font-size: 2.2rem;
+    }
+    .about-me h5 {
+        font-size: 2.2rem;
+    }
+    .about-me p:not(.my-name p) {
+        color: var(--desktop-text-color);
+    }
+    .about-me h5:not(.my-name p) {
+        color: var(--desktop-text-color);
+    }
+    .about-me img {
+        position: absolute;
+        left: 60%;
+        top: 200px;
+        max-width: 350px;
+    }
+    footer {
+        
+        color: var(--secondary-color);
+    }
+    footer p{
+       margin-top: 10%;
+    }
+    
+    .text-decoration {
+    background: linear-gradient(to right, purple, pink);
+    background-clip: text;
+    color: transparent;
+    }
+    
+}
