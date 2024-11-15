@@ -1,11 +1,10 @@
 {
     "basics": {
       "name": "Filip Hansén",
-      "label": "",
       "picture": "",
       "email": "filip.hanse@chas",
       "phone": "(555) 555-5555.",
-      "summary": "A one-sentence to one-paragraph overview text. Do not include any line-breaks.",
+      "summary": "Currently a student at Chas academy pursuing a degree in Fullstack javascript as a way to kickstart my career within software development. Through my determination and ability to learn at rapid pace I will conquer all",
       "location": {
         "address": "Orrspelsvägen 77",
         "postalCode": "167 66",
@@ -24,16 +23,26 @@
       {
         "company": "Swedbank",
         "position": "B2B customer service",
-        "startDate": "2018",
-        "endDate": "2019",
+        "startDate": "May-2018",
+        "endDate": "May-2019",
+        "location": "Stockholm",
         "summary": "I worked with assisting customer with their inquiring agreements"
       },
       {
         "company": "Nobel Foundation",
         "position": "Clerk",
-        "startDate": "2018",
-        "endDate": "2019",
+        "startDate": "Dec-2018",
+        "endDate": "Dec-2019",
+        "location": "Stockholm",
         "summary": "Recieved the nobel laureates at Grand Hotel in Stockholm and assisted them with anything related to the nobel week"
+      },
+      {
+        "company": "Icha Icha",
+        "position": "Server",
+        "startDate": "Jun-2017",
+        "endDate": "Nov-2017",
+        "location": "Stockholm",
+        "summary": "Served food and plated food"
       }
     ],
     "education": [
@@ -41,17 +50,28 @@
         "institution": "Jensen Norra",
         "area": "Economics",
         "studyType": "Gymnasium",
-        "startDate": "Your start date, in YYYY-MM-DD format",
-        "endDate": "Your completion date, in YYYY-MM-DD format",
-        "gpa": "",
-        "courses": "Programming 1"
+        "startDate": "Aug-2014",
+        "endDate": "May-2018",
+        "grades": "18.5"
+      },
+      {
+        "institution": "Kentwood High",
+        "area": "",
+        "studyType": "Highschool",
+        "startDate": "Aug-2015",
+        "endDate": "May-2016",
+        "grades": "3.0"
       }
-    ],
+      ],
     
     "skills": [
       {
         "name": "Javascript",
         "level": "for (let key in year) {knowledge++}"
+      },
+      {
+        "name": "League of Legends",
+        "level": "Master"
       }
     ],
     "languages": [
