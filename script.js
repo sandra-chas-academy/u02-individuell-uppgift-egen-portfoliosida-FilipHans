@@ -33,7 +33,12 @@ const card6 = document.querySelector('.card6');
 
 fetch("resumeData/resume.json")
     .then(result => result.json())
-    .then(value => resumePrinter(value))
+    .then(value => resumePrinter(value));
+
+    
+
+
+    
 
 function resumePrinter (data) {
     
@@ -155,70 +160,108 @@ async function  chessLibraryApiGetter() {
         
     }
 }
-// async function  chessApiGetter() {
-//     const gitHubAPI = ``;
+async function  minesweeperApi() {
+    const gitHubAPI = `https://api.github.com/repos/nholthaus/minesweeper`;
 
-//     try {
-//         const apiData = await fetch(gitHubAPI);
+    try {
+        const apiData = await fetch(gitHubAPI);
 
-//         if (!apiData) {
-//         throw new Error("HTTP ERROR STATUS: " + apiData.status)
-//         }
+        if (!apiData) {
+        throw new Error("HTTP ERROR STATUS: " + apiData.status)
+        }
 
-//         const processedData = await apiData.json();
-//         return processedData;
-//     } 
-//     catch(error) {
-//         console.error(error);
+        const processedData = await apiData.json();
+        return processedData;
+    } 
+    catch(error) {
+        console.error(error);
         
-//     }
-// }
-// async function  chessApiGetter() {
-//     const gitHubAPI = ``;
+    }
+}
+async function  isOdd() {
+    const gitHubAPI = `https://api.github.com/repos/ascpixi/is-odd`;
 
-//     try {
-//         const apiData = await fetch(gitHubAPI);
+    try {
+        const apiData = await fetch(gitHubAPI);
 
-//         if (!apiData) {
-//         throw new Error("HTTP ERROR STATUS: " + apiData.status)
-//         }
+        if (!apiData) {
+        throw new Error("HTTP ERROR STATUS: " + apiData.status)
+        }
 
-//         const processedData = await apiData.json();
-//         return processedData;
-//     } 
-//     catch(error) {
-//         console.error(error);
+        const processedData = await apiData.json();
+        return processedData;
+    } 
+    catch(error) {
+        console.error(error);
         
-//     }
-// }
+    }
+}
+async function  tetrisApi() {
+    const gitHubAPI = `https://api.github.com/repos/mkh2097/Tetris-Assembly-8086`;
+
+    try {
+        const apiData = await fetch(gitHubAPI);
+
+        if (!apiData) {
+        throw new Error("HTTP ERROR STATUS: " + apiData.status)
+        }
+
+        const processedData = await apiData.json();
+        return processedData;
+    } 
+    catch(error) {
+        console.error(error);
+        
+    }
+}
 
 
 async function apiDataDisplay() {
 
+
     const data = await pigGame();
     const chessData = await chessApiGetter();
     const chessLibraryData = await chessLibraryApiGetter();
+    const mineSweeperData = await minesweeperApi();
+    const isItOdd = await isOdd();
+    const tetris = await tetrisApi();
 
-    cardDisplayData(data);
+    const jsonData = await fetch("resumeData/resume.json");
+    const {githubimg} =  await jsonData.json();
+    cardDisplayData(data, chessData, chessLibraryData,mineSweeperData, isItOdd, tetris, githubimg);
     
 }
 
-function cardDisplayData (data) {
-    console.log(data);
+function cardDisplayData (data, chessData, chessLibraryData, mineSweeperData, isItOdd, tetris, githubimg) {
+    console.log(githubimg);
 
-    const {name, description, html_url, language, owner} = data;
-    console.log(language)
+
+    const dataArray = [data, chessData, chessLibraryData, mineSweeperData, isItOdd, tetris];
+    const cardArray = [card1, card2, card3, card4, card5, card6];
+    let arrayTracker = 0;
+    let i = 1;
+
+    dataArray.forEach(element => {
+        const {name, description, html_url, language, owner} = element;
+
+        cardArray[arrayTracker].innerHTML = `      
+        <img src="${githubimg[arrayTracker].image}" alt="">
+        <h3 class="project-title-${i}">${name}</h3>
+        <p class="description-${i}">${description.trim()}</p>
+        <p class="tech-stack${i}"><span>Main language:</span> ${language}</p>
+        <p class="tech-stack${i}"><span>Owner:</span>${owner.login}  </p>
+        <div class="card-footer">
+            <a href="#" class="live-preview"><img src="./img/linkicon.svg" alt="Link icon">Live Preview</a>
+            <a href="${html_url}" class="view-code"><img src="./img/githubicon.svg" alt="Github icon">View Code</a>
+        </div>`
+        i++;
+        arrayTracker++;
+
+
+    });
+
     
-    card1.innerHTML = `        
-                        <img src="img/piggame.png" alt="">
-                        <h3 class="project-title-1">${name}</h3>
-                        <p class="description-1">${description}</p>
-                        <p class="tech-stack1"><span>Main language:</span> ${language}</p>
-                        <p class="tech-stack1"><span>Owner:</span>${owner.login}  </p>
-                        <div class="card-footer">
-                            <a href="#" class="live-preview"><img src="./img/linkicon.svg" alt="Link icon">Live Preview</a>
-                            <a href="${html_url}" class="view-code"><img src="./img/githubicon.svg" alt="Github icon">View Code</a>
-                        </div>`
+
 }
 
 
@@ -246,11 +289,11 @@ function loadShow () {
     items[active].style.transform = `none`;
     items[active].style.zIndex = 1;
     items[active].style.filter = 'none';
-    items[active].style.opacity = 100;
+    items[active].style.opacity = 1;
     for (let i = active + 1; i < items.length; i++) {
         tracker++;
         items[i].style.transform = `translatex(${120*tracker}px) scale(${1 - 0.2*tracker}) perspective(16px) rotateY(-1deg)`;
-        items[i].style.zindex = -tracker;
+        items[i].style.zIndex = -tracker;
         items[i].style.filter = 'blur(10px)';
         items[i].style.opacity = tracker > 2 ? 0 : 0.6;
     }
@@ -259,7 +302,7 @@ function loadShow () {
     for (let i = active - 1; i >= 0; i--) {
         tracker++;
         items[i].style.transform = `translatex(${-120*tracker}px) scale(${1 - 0.2*tracker}) perspective(16px) rotateY(1deg)`;
-        items[i].style.zindex = -tracker;
+        items[i].style.zIndex = -tracker;
         items[i].style.filter = 'blur(10px)';
         items[i].style.opacity = tracker > 2 ? 0 : 0.6;
     }

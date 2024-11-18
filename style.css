@@ -431,6 +431,7 @@ footer {
         font-size: 0.9rem;
         color: var(--secondary-color);
         margin-left: 4.5%;
+        margin-right: 4.5%;
     }
     
     & .card-footer {
@@ -442,6 +443,11 @@ footer {
         color: var(--primary-color);
         position: relative;
         left: 9%;
+    }
+    & img {
+        height: 250px;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
     }
     & .live-preview img {
         position: absolute;

@@ -93,6 +93,25 @@
         "language": "English",
         "fluency": "Native"
       }
+    ],
+    "githubimg": [
+      {
+        "image" : "/img/piggame.png"
+      },
+      {
+        "image": "/img/chess.webp"
+      },
+      {
+        "image": "/img/3dchess.jpeg"
+      },
+      {
+        "image": "/img/minesweeper.png"
+      },
+      {
+        "image": "img/JavaScript-Modulo-Operator.png"
+      },
+      {
+        "image": "img/tetris.png"
+      }
     ]
-
   }
