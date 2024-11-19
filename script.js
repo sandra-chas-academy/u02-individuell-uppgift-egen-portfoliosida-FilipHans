@@ -233,27 +233,29 @@ async function apiDataDisplay() {
 }
 
 function cardDisplayData (data, chessData, chessLibraryData, mineSweeperData, isItOdd, tetris, githubimg) {
-    console.log(githubimg);
 
 
-    const dataArray = [data, chessData, chessLibraryData, mineSweeperData, isItOdd, tetris];
+    const dataArray = [data,chessLibraryData, chessData,  mineSweeperData, isItOdd, tetris];
     const cardArray = [card1, card2, card3, card4, card5, card6];
     let arrayTracker = 0;
     let i = 1;
-
+    
     dataArray.forEach(element => {
+
         const {name, description, html_url, language, owner} = element;
+        
 
         cardArray[arrayTracker].innerHTML = `      
         <img src="${githubimg[arrayTracker].image}" alt="">
         <h3 class="project-title-${i}">${name}</h3>
-        <p class="description-${i}">${description.trim()}</p>
+        <p class="description${i}">${description}</p>
         <p class="tech-stack${i}"><span>Main language:</span> ${language}</p>
         <p class="tech-stack${i}"><span>Owner:</span>${owner.login}  </p>
         <div class="card-footer">
             <a href="#" class="live-preview"><img src="./img/linkicon.svg" alt="Link icon">Live Preview</a>
             <a href="${html_url}" class="view-code"><img src="./img/githubicon.svg" alt="Github icon">View Code</a>
-        </div>`
+        </div>`;
+
         i++;
         arrayTracker++;
 
