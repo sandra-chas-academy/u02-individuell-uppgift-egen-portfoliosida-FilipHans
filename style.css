@@ -1,8 +1,9 @@
 :root {
-    /* dark mode colours */
     --dark-bg: #1a1a1a;
     --dark-text: Whitesmoke;
     --dark-card: #363636; 
+    --clr:#0FF0FC;
+    --clr2:#39FF14;
 
     --primary-color: black;
     --secondary-color: rgb(107, 105, 105);
@@ -15,100 +16,161 @@ input {
 .me-wrapper {
     display: none;
 }
-/* dark mode activated via input checkbox */
-input[type="checkbox"]:checked ~ .mega-wrapper {
-    background-color: var(--dark-bg) !important;
-    color: var(--dark-text) !important;
-
-    & .fa-github {
-        filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(3%) hue-rotate(250deg) brightness(101%) contrast(101%);
-        
-    }
-    & .card {
-        background-color: var(--dark-card);
-    }
-    & h1 {
-        color: var(--dark-text);
-    }
-    & .flex-nav ul a {
-        color: var(--dark-text);
-        
-    }
-
-    & .card .card-footer a {
-        color: var(--dark-text);
-    }
-    & .card p span {
-        color: var(--dark-text);
-    }
-    & .about-me p:not(.my-name p) {
-        color: var(--dark-text);
-    }
-    & .about-me h5 {
-        color: var(--dark-text);
-    }
-}
-
-input[type="checkbox"]:checked ~ .container-page4 .card h3 {
-    color: var(--dark-text);
-}
-input[type="checkbox"]:checked + label {
-    background-color: white;
-}
-input[type="checkbox"]:checked ~ .mega-wrapper .container-page4 .card a img {
-    filter: brightness(0) saturate(100%) invert(99%) sepia(3%) saturate(229%) hue-rotate(196deg) brightness(118%) contrast(92%);
-}
-
-.skills {
-    width: 90%;
-    margin: auto;
+.skillsBtn {
+    display: block;
+    padding: 10px 60px;
+    background: #fff;
+    outline: none;
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
-
-    ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .head-of-list {
-        margin-bottom: 4%;
-        font-weight: 700;
-        font-size: 2rem;
-        text-align: center;
-    }
-    .mySkills {
-        border: 4px solid black;
-        background: #00b09b;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-        border-radius: 5px;
-        text-align: center;
-        margin-bottom: 4%;
-        font-size: 2rem;
-        font-weight: 500;
-    }
-    
-    p {
-        background-color: black;
-        color: white;
-        padding: 15px;
-        text-align: center;
-    }
+    font-size: 22px;
+    font-weight: 500;
+    justify-self: center;
 }
-.skills>ul {
-    max-height: 0px;
-    opacity: 0;
-    visibility: hidden;
 
-    list-style-type: none;
-    font-size: smaller;
-    transition: all ease-in-out 0.25s;
+
+
+.skillsAndInfo {
+    display: none;
+    justify-self: center;
+    margin-top: 150px;
+    /* display: grid; */
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows: repeat(5, 1fr);
+
+    min-width: 527px;
+    max-width: 780px;
+    height: 50%;
+    width: 80%;
+    border: 4px solid black;
+    background-color: #1a1a1a;
+    color: whitesmoke;
+    text-align: center;
+    align-items: center;
+    font-weight: 750;
+    font-size: 1rem;
+
+
+
+
+    & .info {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100px;
+        
+    }
+    & .name {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    & .phone {
+        display: flex;
+        align-items: center;
+        text-align: start;        
+        grid-row: 3;
+
+    }
+    & .email {
+        display: flex;
+        align-items: center;
+        text-align: start;        
+        grid-row: 4;
+    }
+    & .city {
+        display: flex;
+        align-items: center;
+        text-align: start;        
+
+        grid-row: 5;
+    }
+    & .name {
+        display: flex;
+        align-items: center;
+        grid-row: 2;
+    }
+    & .skills {
+        font-size: 1.4rem;
+        color: #dffee2;
+    }
+    & .proficiency {
+        color: #dffee2;
+        font-size: 1.4rem;
+
+        grid-column: 3;
+    }
+    & .Javascript {
+        border-left: 2px solid var(--desktop-text-color);
+        border-right: 2px solid var(--desktop-text-color);
+        border-bottom: 2px solid var(--desktop-text-color);
+        grid-row: 2;
+        grid-column: 2;
+    }
+    & .JavascriptPro {
+        border-right: 2px solid var(--desktop-text-color);
+        border-bottom: 2px solid var(--desktop-text-color);
+        grid-row: 2;
+        grid-column: 3;
+
+    }
+    & .typeScript {
+        grid-row: 3;
+        border-left: 2px solid var(--desktop-text-color);
+        border-right: 2px solid var(--desktop-text-color);
+        border-bottom: 2px solid var(--desktop-text-color);
+
+    }
+    & .CSS {
+        grid-row: 4;
+        border-left: 2px solid var(--desktop-text-color);
+        border-right: 2px solid var(--desktop-text-color);
+        border-bottom: 2px solid var(--desktop-text-color);
+
+    }
+    & .League {
+        grid-row: 5;
+        grid-column: 2;
+        border-left: 2px solid var(--desktop-text-color);
+        border-right: 2px solid var(--desktop-text-color);
+        border-bottom: 2px solid var(--desktop-text-color);
+
+    }
+    & .LeaguePro {
+        border-right: 2px solid var(--desktop-text-color);
+        border-bottom: 2px solid var(--desktop-text-color);
+        grid-row: 5;
+        grid-column: 3;
+    }
+    & .CSSPro {
+        border-right: 2px solid var(--desktop-text-color);
+        border-bottom: 2px solid var(--desktop-text-color);
+        grid-row: 4;
+    }
+    & .typeScriptPro {
+        border-right: 2px solid var(--desktop-text-color);
+        grid-row: 3;
+        grid-column: 3;
+        border-bottom: 2px solid var(--desktop-text-color);
+
+    }
+
 }
-.skills .dropDownVisible {
-    visibility: visible;
-    max-height: 200px;
-    opacity: 100%;
+.active {
+    display: grid;
 }
+
+#closeBtn {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
 
 .detailsPanel .skills .twoWords {
 
@@ -132,19 +194,10 @@ grid-template-columns: repeat(2,1fr);
 }
 
 /* Button for darkmode */
-label {
-    cursor: pointer;
-    padding: 10px 20px;
-    background-color: #ccc;
-    color: #000;
-    border-radius: 5px;
-    position: fixed;
-    top: 20%;
-    right: 20px;
-    z-index: 4;
-}
+
 
 html {
+    background-color: rgb(211, 208, 208);
     font-size: 16px;
 }
 body {
@@ -354,9 +407,7 @@ a:hover {
     background-clip: text;
     color: transparent;
 }
-.desktop-text {
-    display: none;
-}
+
 .container-page2 h3 {
     font-size: 2rem;
 }
@@ -376,7 +427,7 @@ a:hover {
 }
 .card {
     position: absolute;
-    
+    top: 14%;
     width: 300px;
     height: 450px;
     transition: 0.6s;
@@ -429,6 +480,9 @@ a:hover {
         overflow-wrap: break-word;
     }
     & .card-footer {
+        position: relative;
+        align-items: end;
+        left: 2.2%;
         height: 3vh;
         margin-bottom: 0.6rem;
     }
@@ -439,7 +493,7 @@ a:hover {
         left: 9%;
     }
     & img {
-        height: 250px;
+        height: 45%;
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
     }
@@ -463,8 +517,133 @@ a:hover {
         
     }
 }
+.neonSwap {
+    position: absolute;
+    background: #444;
+    top: 2.5%;
+    right: 40%;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    transition: 0.2s;
+    z-index: 2;
+    
+}
 
 
+.neonSwap:hover {
+    letter-spacing: 0.2rem;
+    padding: 1.1rem 3.1rem;
+    background: var(--clr);
+    color: var(--clr);
+    box-shadow: 0 0 35px var(--clr);
+    animation: box 3s infinite;
+}
+.neonSwap2:hover {
+    background-color: var(--clr2);
+    color: var(--clr2);
+    box-shadow: 0 0 35px var(--clr2) ;
+    animation: box2 3s infinite;
+}
+
+.neonSwap::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #272822;
+}
+
+.neonSwap span {
+    position: relative;
+    z-index: 1;
+}
+.neonSwap i {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.neonSwap i::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 80%;
+    top: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+}
+
+.neonSwap2 i::before {
+    border: 2px solid var(--clr2);
+}
+
+.neonSwap:hover i::before {
+    width: 15px;
+    left: 20%;
+    animation: move 3s infinite;
+}
+
+.neonSwap i::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 20%;
+    bottom: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+}
+.neonSwap2 i::after {
+    border: 2px solid var(--clr2);
+}
+
+.neonSwap:hover i::after {
+    width: 15px;
+    left: 80%;
+    animation: move 3s infinite;
+}
+
+@keyframes move {
+    0% {
+    transform: translateX(0);
+    }
+    50% {
+    transform: translateX(5px);
+    }
+    100% {
+    transform: translateX(0);
+    }
+}
+
+@keyframes box {
+    0% {
+    box-shadow: #27272c;
+    }
+    50% {
+    box-shadow: 0 0 25px var(--clr);
+    }
+    100% {
+    box-shadow: #27272c;
+    }
+}
+@keyframes box2 {
+    0% {
+    box-shadow: #27272c;
+    }
+    50% {
+    box-shadow: 0 0 25px var(--clr2);
+    }
+    100% {
+    box-shadow: #27272c;
+    }
+}
 
 .my-projects-cards {
     margin-left: 5%;
@@ -475,27 +654,42 @@ a:hover {
     }
 }
 
+.loader {
+    display: none;
+    position: fixed;
+    top: 40%;
+    right: 40%;
 
+    background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    border-radius: 50%;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid rgba(125, 40, 205, 0.618);
+    border-bottom: 16px solid rgba(125, 40, 205, 0.618);
+
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+
+    100% { transform: rotate(360deg); }
+  }
 
 @media (min-width: 1000px) {
 
-    input[type="checkbox"]:checked ~ .mega-wrapper .fa-github{
-        filter: brightness(0) saturate(100%) invert(56%) sepia(40%) saturate(0%) hue-rotate(144deg) brightness(82%) contrast(89%);
-    }
+
     
     .experience-box {
         min-height: 50px;
-    }
-    .experience-box4 {
-        display: none;
     }
     
     header .desktop-text {
         display: contents;
     }
-    header .phone-text {
-        display: none;
-    }
+
     header {
         width: 50%;
         margin-left: 10%;

@@ -1,8 +1,5 @@
 const aboutMe = document.querySelector('.me-wrapper');
-const toProjectBtn = document.querySelector('.go-to-projects');
-
 const projects = document.querySelector('.projects-page');
-const toAboutBtn = document.querySelector('.go-to-about');
 
 const aboutMeText = document.querySelector('.phone-text');
 
@@ -11,12 +8,6 @@ const experienceBox2 = document.querySelector('.experience-box2');
 const experienceBox3 = document.querySelector('.experience-box3');
 const experienceBox4 = document.querySelector('.experience-box4');
 const experienceBox5 = document.querySelector('.experience-box5');
-
-const skillsDiv = document.querySelector('.skills');
-const skill1 = document.querySelector('.skill1');
-const skill2 = document.querySelector('.skill2');
-const skill3 = document.querySelector('.skill3');
-const skill4 = document.querySelector('.skill4');
 
 const proficiency1 = document.querySelector('.proficiency1');
 const proficiency2 = document.querySelector('.proficiency2');
@@ -30,6 +21,50 @@ const card4 = document.querySelector('.card4');
 const card5 = document.querySelector('.card5');
 const card6 = document.querySelector('.card6');
 
+const neonSwap = document.querySelector('.neonSwap');
+const btnText = document.querySelector('.btnText');
+
+const skillsBtn = document.querySelector('.skillsBtn');
+const closeSkills = document.getElementById('closeBtn');
+const skillsAndInfo = document.querySelector('.skillsAndInfo');
+
+skillsBtn.addEventListener('click', () => {
+    closeSkills.style.display = 'block';
+    aboutMe.style.display = 'none';
+    neonSwap.style.display = 'none';
+    skillsAndInfo.classList.add('active');
+});
+
+closeSkills.addEventListener('click', () => {
+    closeSkills.style.display = 'none';
+    aboutMe.style.display = 'block';
+    neonSwap.style.display = 'block';
+    skillsAndInfo.classList.remove('active');
+})
+
+let decider = true;
+neonSwap.addEventListener('click', () => {
+    neonSwap.classList.toggle('neonSwap2');
+    aboutMe.style.display ='block';
+
+    if (decider == true) {
+        decider = false;
+        btnText.textContent = 'projects';
+    aboutMe.style.display ='block';
+    projects.style.display = 'none';
+
+
+    } else {
+        btnText.textContent = 'About me'
+        decider = true;
+        projects.style.display = 'block';
+        aboutMe.style.display = 'none';
+    }
+
+})
+
+
+// get JSON data
 
 fetch("resumeData/resume.json")
     .then(result => result.json())
@@ -39,6 +74,7 @@ fetch("resumeData/resume.json")
 
 
     
+// Function to display all the json data
 
 function resumePrinter (data) {
     
@@ -75,33 +111,30 @@ function resumePrinter (data) {
                                 <span class="institute"><img src="./img/apartment_20dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="Apartment"> ${education[1].institution}</span>
                                 <span class="location"><img src="./img/location_on_20dp_5F6368_FILL0_wght400_GRAD0_opsz20.svg" alt="Pindrop">${education[1].location}</span>
                                 <span class="calendar"><img src="./img/calendar_month_20dp_5F6368_FILL0_wght400_GRAD0_opsz20.svg" alt="Calendar"> <time datetime="2018-05">${education[1].startDate}</time> - <time datetime="2019-05">${education[1].endDate}</time>
-                                </span>`
-
-
-                                skill1.textContent = skills[0].name;
-                                skill2.textContent = skills[1].name;
-                                skill3.textContent = skills[2].name;
-                                skill4.textContent = skills[3].name;
-
-                                proficiency1.textContent = skills[0].level;
-                                proficiency2.textContent = skills[1].level;
-                                proficiency3.textContent = skills[2].level;
-                                proficiency4.textContent = skills[3].level;
-
+                                </span>`;
+                                
+    skillsAndInfo.innerHTML = `
+                                <img src="/img/info.svg" alt="Info svg" class="info">
+                                <p class="name"><img src="/img/person.svg" alt="Person svg" class="name">${name}</p>
+                                <p class="phone"><img src="/img/phone.svg" alt="Phone svg">${phone}</p>
+                                <p class="email"><img src="/img/mail.svg" alt="mail svg">${email}</p>
+                                <p class="city"><img src="/img/home.svg" alt="Building svg">${location.city}, ${location.address}</p>
+                                <h3 class="skills">Skills</h3>
+                                <h3 class="proficiency">Proficiency</h3>
+                                <p class="Javascript">${skills[0].name}</p>
+                                <p class="League">${skills[1].name}</p>
+                                <p class="CSS">${skills[2].name}</p>
+                                <p class="typeScript">${skills[3].name}</p>
+                                <p class="JavascriptPro">${skills[0].level}</p>
+                                <p class="LeaguePro">${skills[1].level}</p>
+                                <p class="CSSPro">${skills[2].level}</p>
+                                <p class="typeScriptPro">${skills[3].level}</p>`;
 
 
 }
 
-toProjectBtn.addEventListener('click', () => {
 
-    aboutMe.style.display = 'none';
-    projects.style.display = 'block';
-})
 
-toAboutBtn.addEventListener('click', () => {
-    aboutMe.style.display = 'block';
-    projects.style.display = 'none';
-})
 
 
 
@@ -215,10 +248,12 @@ async function  tetrisApi() {
     }
 }
 
+const loader = document.querySelector('.loader');
 
 async function apiDataDisplay() {
 
-
+    projects.style.display = 'none';
+    loader.style.display = 'block';
     const data = await pigGame();
     const chessData = await chessApiGetter();
     const chessLibraryData = await chessLibraryApiGetter();
@@ -228,6 +263,9 @@ async function apiDataDisplay() {
 
     const jsonData = await fetch("resumeData/resume.json");
     const {githubimg} =  await jsonData.json();
+    loader.style.display = 'none';
+    projects.style.display = 'block';
+
     cardDisplayData(data, chessData, chessLibraryData,mineSweeperData, isItOdd, tetris, githubimg);
     
 }
@@ -245,6 +283,7 @@ function cardDisplayData (data, chessData, chessLibraryData, mineSweeperData, is
         const {name, description, html_url, language, owner} = element;
         
 
+        // Loops through the cards and attaches relevant API information to the card
         cardArray[arrayTracker].innerHTML = `      
         <img src="${githubimg[arrayTracker].image}" alt="">
         <h3 class="project-title-${i}">${name}</h3>
@@ -252,30 +291,19 @@ function cardDisplayData (data, chessData, chessLibraryData, mineSweeperData, is
         <p class="tech-stack${i}"><span>Main language:</span> ${language}</p>
         <p class="tech-stack${i}"><span>Owner:</span>${owner.login}  </p>
         <div class="card-footer">
-            <a href="#" class="live-preview"><img src="./img/linkicon.svg" alt="Link icon">Live Preview</a>
             <a href="${html_url}" class="view-code"><img src="./img/githubicon.svg" alt="Github icon">View Code</a>
         </div>`;
 
         i++;
         arrayTracker++;
-
-
     });
 
-    
-
 }
-
-
 
 const mainItem = document.querySelector('.main-item');
 const skillsList = document.querySelector('.list-of-skills');
 
 
-
-mainItem.addEventListener('click', ()  => {
-    skillsList.classList.toggle('dropDownVisible');
-})
 
 // projects page slider
 
@@ -287,6 +315,7 @@ let active = 3;
 function loadShow () {
     let tracker = 0;
     
+    // Animation for card slider
     items[active].style.backgroundColor = `solid`;
     items[active].style.transform = `none`;
     items[active].style.zIndex = 1;
