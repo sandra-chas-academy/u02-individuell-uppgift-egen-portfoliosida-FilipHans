@@ -32,17 +32,18 @@ input {
 
 
 .skillsAndInfo {
-    display: none;
+    visibility: hidden;
     justify-self: center;
-    margin-top: 150px;
-    /* display: grid; */
+    display: grid;
     grid-template-columns: 50% 25% 25%;
     grid-template-rows: repeat(5, 1fr);
-
+    margin-top: 20px;
+    transition: 0.5s;
+    overflow: hidden;
     min-width: 527px;
     max-width: 780px;
-    height: 50%;
-    width: 80%;
+    height: 0px;
+    width: 100%;
     border: 4px solid black;
     background-color: #1a1a1a;
     color: whitesmoke;
@@ -50,6 +51,8 @@ input {
     align-items: center;
     font-weight: 750;
     font-size: 1rem;
+
+    box-shadow: 0 0 25px var(--clr2);
 
 
 
@@ -155,6 +158,12 @@ input {
     }
 
 }
+header .skillsShow {
+    visibility: visible;
+    height: 500px;
+    display: grid;
+}
+
 .active {
     display: grid;
 }
@@ -519,9 +528,9 @@ a:hover {
 }
 .neonSwap {
     position: absolute;
-    background: #444;
     top: 2.5%;
-    right: 40%;
+    right: 35%;
+    background: #444;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -680,7 +689,11 @@ a:hover {
 
 @media (min-width: 1000px) {
 
-
+    .neonSwap {
+        position: absolute;
+        top: 2.5%;
+        right: 43%;
+    }
     
     .experience-box {
         min-height: 50px;

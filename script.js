@@ -29,18 +29,10 @@ const closeSkills = document.getElementById('closeBtn');
 const skillsAndInfo = document.querySelector('.skillsAndInfo');
 
 skillsBtn.addEventListener('click', () => {
-    closeSkills.style.display = 'block';
-    aboutMe.style.display = 'none';
-    neonSwap.style.display = 'none';
-    skillsAndInfo.classList.add('active');
+ 
+    skillsAndInfo.classList.toggle('skillsShow');
 });
 
-closeSkills.addEventListener('click', () => {
-    closeSkills.style.display = 'none';
-    aboutMe.style.display = 'block';
-    neonSwap.style.display = 'block';
-    skillsAndInfo.classList.remove('active');
-})
 
 let decider = true;
 neonSwap.addEventListener('click', () => {
@@ -132,12 +124,6 @@ function resumePrinter (data) {
 
 
 }
-
-
-
-
-
-
 
 async function pigGame () {
     const gitHubAPI = `https://api.github.com/repos/FilipHans/pig-game`;
