@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Y0f03qEq)
 
 # Guide lines
-
+Link to Netlify: https://filipscvandportfolio.netlify.app/
 This website will start at the projects page where you can navigate with left and right arrow through the cards or click the arrows. Then you can swap between the projects page and the CV page where I list my working and educational experiences. There is also a button to press at the bottom of the CV to see more information and skills. All of the github and other icons have related links to them, so click them!
 
 ## interactive features
