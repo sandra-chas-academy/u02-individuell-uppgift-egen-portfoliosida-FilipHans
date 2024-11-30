@@ -2,6 +2,7 @@
 
 # Guide lines
 Link to Netlify: https://filipscvandportfolio.netlify.app/
+
 This website will start at the projects page where you can navigate with left and right arrow through the cards or click the arrows. Then you can swap between the projects page and the CV page where I list my working and educational experiences. There is also a button to press at the bottom of the CV to see more information and skills. All of the github and other icons have related links to them, so click them!
 
 ## interactive features
