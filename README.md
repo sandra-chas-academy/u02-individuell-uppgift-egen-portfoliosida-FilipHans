@@ -6,7 +6,7 @@ This website will start at the projects page where you can navigate with left an
 
 ## interactive features
 
-This project contains a handful of interactive features although a couple of them fall into the same category, these are the buttons that have event listeneres which add classes or change the style of elements to 'block' or 'none'. The main one is the card slider which uses a nodelist to allowed the user to go through the project cards either via clicking the arrow buttons or using their left and right arrow keys. It works by iterating through the nodelist with a variable called active making that current assosciated node the main one and then two 'for loops' to alter the appereance of the nodes behind and ahead of the 'active' one. 
+This project contains a handful of interactive features, 2 buttons that have different interactive effects, one changes the display of the containers, the other adds a class to change the height with a transition for a dropdown effect. The main one is the card slider which uses a nodelist to allowed the user to go through the project cards either via clicking the arrow buttons or using their left and right arrow keys. It works by iterating through the nodelist with a variable called active making that current assosciated node the main one and then two 'for loops' to alter the appereance of the nodes behind and ahead of the 'active' one. 
 
 ## Strengths
 

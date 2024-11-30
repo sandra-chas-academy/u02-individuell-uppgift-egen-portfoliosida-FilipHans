@@ -144,7 +144,7 @@ async function pigGame () {
     }
 }
 async function  chessApiGetter() {
-    const gitHubAPI = `https://api.github.com/repos/juliangarnier/3D-Hartwig-chess-set`;
+    const gitHubAPI = `https://api.github.com/repos/FilipHans/u03-team-AW`;
 
     try {
         const apiData = await fetch(gitHubAPI);
@@ -358,4 +358,5 @@ prev.addEventListener('click', () => {
 })
 
 apiDataDisplay();
+
 
